@@ -20,7 +20,7 @@ find_package( LibZip REQUIRED )
 
 # BOOST
 FIND_PACKAGE(Boost REQUIRED python)
-FIND_PACKAGE(PythonLibs REQUIRED)
+FIND_PACKAGE(PythonLibs 2 REQUIRED)
 
 if(LIBZIP_VERSION VERSION_LESS 0.11)
     #old version LibZip

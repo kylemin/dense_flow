@@ -4,14 +4,15 @@ Extracting dense flow field given a video.
 - LibZip:
 to install on ubuntu ```apt-get install libzip-dev``` on mac ```brew install libzip```
 
-#### For OpenCV 3 Users
-Please see the [opencv-3.1](https://github.com/yjxiong/dense_flow/tree/opencv-3.1) branch. Many thanks to @victorhcm for the contributions!
-
 ### Install
 ```
-git clone --recursive http://github.com/yjxiong/dense_flow
+git clone --recursive http://github.com/kylemin/dense_flow
 mkdir build && cd build
 cmake .. && make -j
+
+* It works only on python2 because of np.string
+* In CMakeLists.txt, FIND_PACKAGE(PythonLibs 2 REQUIRED)
+* It takes about 0.1s per frame
 ```
 
 ### Usage
@@ -21,6 +22,9 @@ cmake .. && make -j
 - `test.avi`: input video
 - `tmp`: folder containing RGB images and optical flow images
 - `dir`: output generated images to folder. if set to `zip`, will write images to zip files instead.
+
+* python extract_flow.py or
+* python extract_flow_h.py
 
 ### Warp Flow
 The warp optical flow is used in the following paper
