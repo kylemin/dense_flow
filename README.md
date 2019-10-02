@@ -9,11 +9,11 @@ to install on ubuntu ```apt-get install libzip-dev``` on mac ```brew install lib
 git clone --recursive http://github.com/kylemin/dense_flow
 mkdir build && cd build
 cmake .. && make -j
+```
 
 * It works only on python2 because of np.string
 * In CMakeLists.txt, FIND_PACKAGE(PythonLibs 2 REQUIRED)
 * It takes about 0.1s per frame
-```
 
 ### Usage
 ```
@@ -23,8 +23,11 @@ cmake .. && make -j
 - `tmp`: folder containing RGB images and optical flow images
 - `dir`: output generated images to folder. if set to `zip`, will write images to zip files instead.
 
-* python extract_flow.py or
-* python extract_flow_h.py
+* New
+```
+python extract_flow.py, or
+python extract_flow_h.py
+```
 
 ### Warp Flow
 The warp optical flow is used in the following paper
